@@ -1,0 +1,57 @@
+.navigation {
+  border-radius: var(--border-radius-l);
+
+  @include laptop {
+    border-radius: var(--border-radius-m);
+  }
+
+  @include tablet-above {
+    padding: fluid-to-laptope(10 ,8);
+    background-color: var(--color-black-06);
+    outline: var(--border-width-l) solid var(--color-black-12);
+  }
+
+  @include tablet {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    border-radius: var(--border-radius-m);
+    overflow-y: auto;
+
+  }
+
+  &__menu {
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 6px;
+
+      @include tablet {
+      flex-direction: column;
+        row-gap: 16px;
+        margin-block: auto;
+        font-size: 20px;
+      }
+    }
+
+    &-link {
+      padding: fluid-to-laptope(14, 12) fluid-to-laptope(24, 20);
+      color: var(--color-gray-75);
+      border-radius: var(--border-radius-s);
+
+      @include hover {
+        color: var(--color-white);
+        background-color: var(--color-red-60);
+      }
+    }
+  }
+
+}
+
+.is-active {
+  color: var(--color-white);
+  background-color: var(--color-black-10);
+  font-weight: 500;
+  pointer-events: none;
+}

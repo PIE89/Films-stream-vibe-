@@ -6,7 +6,7 @@
   }
 
   @include tablet-above {
-    padding: fluid-to-laptope(10 ,8);
+    padding: fluid-to-laptop(10 ,8);
     background-color: var(--color-black-06);
     outline: var(--border-width-l) solid var(--color-black-12);
   }
@@ -36,7 +36,7 @@
     }
 
     &-link {
-      padding: fluid-to-laptope(14, 12) fluid-to-laptope(24, 20);
+      padding: fluid-to-laptop(14, 12) fluid-to-laptop(24, 20);
       color: var(--color-gray-75);
       border-radius: var(--border-radius-s);
 
@@ -53,5 +53,5 @@
   color: var(--color-white);
   background-color: var(--color-black-10);
   font-weight: 500;
-  pointer-events: none;
+//  pointer-events: none;
 }

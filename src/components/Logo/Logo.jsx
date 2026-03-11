@@ -1,5 +1,5 @@
 import './Logo.scss'
-import classNames from 'classNames'
+import classNames from 'classnames'
 
 const Logo = ({loading = 'lazy', className}) => {
   const title = 'Home';

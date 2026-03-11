@@ -1,15 +1,15 @@
-import '@/styles'
+import "@/styles"
 import { Head } from "minista"
-import {Header} from "@/layouts/Header/index.js";
-import {Content} from "@/layouts/Content/index.js";
-import {Footer} from "@/layouts/Footer/index.js";
+import { Header } from "@/layouts/Header/index.js"
+import { Content } from "@/layouts/Content/index.js"
+import { Footer } from "@/layouts/Footer/index.js"
 
-export default function ({ title, children, url }) {
+export default function ({ title, children, url, isHeaderFixed }) {
   return (
     <>
-      <Head htmlAttributes={{lang: 'en'}}>
+      <Head htmlAttributes={{ lang: "en" }}>
         <title>Stream Vibe | {title}</title>
-        <script src='./src/main.js' type='module'/>
+        <script src="./src/main.js" type="module" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -29,9 +29,9 @@ export default function ({ title, children, url }) {
         />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      <Header url={url}/>
+      <Header url={url} isFixed={isHeaderFixed} />
       <Content>{children}</Content>
-      <Footer/>
+      <Footer />
     </>
   )
 }

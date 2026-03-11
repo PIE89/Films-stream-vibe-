@@ -1,17 +1,18 @@
-import './BurgerButton.scss'
-import classNames from 'classNames'
+import "./BurgerButton.scss"
+import classNames from "classnames"
 
 const BurgerButton = (props) => {
-  const {className} = props;
+  const { className, extraAttrs } = props
 
-  const title = 'Open menu'
+  const title = "Open menu"
 
   return (
     <button
       className={classNames(className, "burger-button")}
-      type='button'
+      type="button"
       aria-label={title}
       title={title}
+      {...extraAttrs}
     >
       <svg
         className="burger-button__svg"
@@ -36,4 +37,4 @@ const BurgerButton = (props) => {
   )
 }
 
-export {BurgerButton}
+export { BurgerButton }

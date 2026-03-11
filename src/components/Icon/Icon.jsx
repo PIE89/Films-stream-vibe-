@@ -1,17 +1,19 @@
-import './Icon.scss'
-import { Icon as IconMinista } from "minista"
-import classNames from 'classNames'
+import "./Icon.scss"
+import classNames from "classnames"
+import { Icon as MinistaIcon } from "minista"
 
-const Icon = ({name, className, hasFill = false}) => {
+const Icon = (props) => {
+  const { className, name, hasFill = false } = props
+
   return (
     <span className={classNames(className, "icon")}>
-      <IconMinista
+      <MinistaIcon
         iconId={name}
-        fill={hasFill ? 'currentColor' : 'none'}
-        stroke={hasFill ? 'none' : 'currentColor'}
+        fill={hasFill ? "currentColor" : "none"}
+        stroke={hasFill ? "none" : "currentColor"}
       />
     </span>
   )
 }
 
-export {Icon}
+export { Icon }

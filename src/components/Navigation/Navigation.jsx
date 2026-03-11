@@ -1,5 +1,5 @@
 import './Navigation.scss'
-import classNames from 'classNames'
+import classNames from 'classnames'
 
 const Navigation = ({className, url}) => {
 

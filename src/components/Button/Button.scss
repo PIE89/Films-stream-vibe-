@@ -1,7 +1,8 @@
 .button {
   @include flex-center(true);
 
-  padding: fluid-to-laptope(18, 14) fluid-to-laptope(24, 20);
+  column-gap: 4px;
+  padding: fluid-to-laptop(18, 14) fluid-to-laptop(24, 20);
   font-weight: 600;
   color: var(--color-white);
   background-color: var(--color-red-45);
@@ -11,12 +12,12 @@
   cursor: pointer;
 
   @include laptop {
-    border-radius: var(--border-radius-xs)
+    border-radius: var(--border-radius-xs);
   }
 
-  @include  hover {
-    background-color: var(--color-red-60);
+  @include hover {
     color: var(--color-white);
+    background-color: var(--color-red-60);
   }
 
   &:active {
@@ -30,17 +31,25 @@
   }
 
   &:has(.button__icon:only-child) {
-   padding: 0;
+    @include square(fluid-to-laptop(56, 44));
+
+    padding: 0;
   }
 
   &--transparent {
     background-color: transparent;
 
     &:has(.button__icon:only-child) {
-      @include  square(44px);
+      @include square(44px);
+
       .button__icon {
-      --iconSize: #{fluid-to-laptope(34, 24)};
+        --iconSize: #{fluid-to-laptop(34, 24)};
       }
     }
+  }
+
+  &--black-10 {
+    background-color: var(--color-black-10);
+    border: var(--border);
   }
 }

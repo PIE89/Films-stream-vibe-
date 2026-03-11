@@ -1,43 +1,88 @@
-import './Header.scss'
-import classNames from 'classNames'
-import {Navigation} from "@/components/Navigation/index.js";
-import {Logo} from "@/components/Logo/index.js";
-import {Button} from "@/components/Button/index.js";
-import {BurgerButton} from "@/components/BurgerButton/index.js";
+import "./Header.scss"
+
+import classNames from "classnames"
+
+import { Button } from "@/components/Button"
+import { BurgerButton } from "@/components/BurgerButton"
+import { Logo } from "@/components/Logo"
 
 const Header = (props) => {
-  const {className, url} = props;
+  const { url, isFixed } = props
+
+  const menuItems = [
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Movies & Shows",
+      href: "/movies",
+    },
+    {
+      label: "Support",
+      href: "/support",
+    },
+    {
+      label: "Subscriptions",
+      href: "/subscriptions",
+    },
+  ]
+
   return (
-    <div className={classNames(className, "header")}>
+    <header
+      className={classNames("header", {
+        "is-fixed": isFixed,
+      })}
+      data-js-overlay-menu=""
+    >
       <div className="header__inner container">
-        <Logo loading='eager'/>
-
-        <dialog className="header__overlay-menu-dialog">
-          <Navigation url={url} className='header__menu'/>
-
+        <Logo className="header__logo" loading="eager" />
+        <dialog
+          className="header__overlay-menu-dialog"
+          data-js-overlay-menu-dialog=""
+        >
+          <nav className="header__menu">
+            <ul className="header__menu-list">
+              {menuItems.map(({ label, href }, index) => (
+                <li className="header__menu-item" key={index}>
+                  <a
+                    className={classNames("header__menu-link", {
+                      "is-active": href === url,
+                    })}
+                    href={href}
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
           <div className="header__actions">
-          <Button
-            className='header__button'
-            label='Search'
-            isLabelHidden
-            mode='transparent'
-            iconName='search'
-          />
-          <Button
-            className='header__button'
-            label='Notify'
-            isLabelHidden
-            mode='transparent'
-            iconName='notify'
-          />
-        </div>
+            <Button
+              className="header__button"
+              label="Search"
+              isLabelHidden
+              mode="transparent"
+              iconName="search"
+            />
+            <Button
+              className="header__button"
+              label="Notifications"
+              isLabelHidden
+              mode="transparent"
+              iconName="notify"
+            />
+          </div>
         </dialog>
-
-        <BurgerButton className='header__burger-button visible-tablet'/>
+        <BurgerButton
+          className="header__burger-button visible-tablet"
+          extraAttrs={{
+            "data-js-overlay-menu-burger-button": "",
+          }}
+        />
       </div>
-
-    </div>
+    </header>
   )
 }
 
-export {Header}
+export { Header }

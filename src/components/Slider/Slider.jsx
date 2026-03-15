@@ -63,7 +63,6 @@ const Slider = (props) => {
       {!navigationTargetElementId && (
         <SliderNavigation className="slider__navigation" />
       )}
-
       {hasScrollbar && (
         <div 
         className="slider__scrollbar visible-mobile"

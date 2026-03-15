@@ -5,10 +5,9 @@ import Slider from "@/components/Slider"
 import SliderNavigation from "@/components/Slider/components/SliderNavigation"
 import { categoryItems } from "./categoryItems"
 
+
 const Categories = () => {
-
-  const sliderNavigationId = "categories-slider-navigation"
-
+const sliderNavigationId = "categories-slider-navigation"
 
   return (
     <Section

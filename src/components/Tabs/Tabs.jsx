@@ -8,17 +8,17 @@ const Tabs = (props) => {
     className,
     title,
     items = [],
-    navigationTargetElementID = null,
+    navigationTargetElementId = null,
   } = props
 
   return (
     <div
       className={classNames(className, "tabs")}
       data-js-tabs={JSON.stringify({
-        navigationTargetElementID,
+        navigationTargetElementId,
       })}
     >
-      {!navigationTargetElementID && (
+      {!navigationTargetElementId && (
         <TabsNavigation title={title} items={items} />
       )}
 

@@ -4,31 +4,34 @@ import SliderNavigation from "./components/SliderNavigation"
 import classNames from "classnames"
 
 const defaultSliderParams = {
-   slidesPerView: 2,
-  slidesPerGroup: 1,
-  spaceBetween: 20,
+  slidesPerView: 5,
+  slidesPerGroup: 5,
+  spaceBetween: 30,
   breakpoints: {
+    0: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+      spaceBetween: 20,
+    },
     481: {
       slidesPerView: 3,
       slidesPerGroup: 3,
+      spaceBetween: 20,
     },
     768: {
       slidesPerView: 4,
       slidesPerGroup: 4,
-      allowTouchMove: true,
+      spaceBetween: 20,
     },
     1024: {
-      slidesPerView: 5,
-      slidesPerGroup: 5,
+      spaceBetween: 20,
       allowTouchMove: false,
     },
     1441: {
-      slidesPerView: 5,
-      slidesPerGroup: 5,
-      allowTouchMove: false,
       spaceBetween: 30,
+      allowTouchMove: false,
     },
-  }
+  },
 }
 
 const Slider = (props) => {
@@ -37,13 +40,16 @@ const Slider = (props) => {
     navigationTargetElementId = null,
     sliderParams = defaultSliderParams,
     isBeyondOfTheViewPortOnMobileS,
-    hasScrollbar = true
+    hasScrollbarOnMobile = true,
+    navigationPosition = "", // '' default | 'abs-bottom'
+    isNavigationHiddenMobile = true,
   } = props
 
   return (
     <div
-      className={classNames('slider', {
-        'slider--beyond-the-viewport-on-mobile-s': isBeyondOfTheViewPortOnMobileS
+      className={classNames("slider", {
+        "slider--beyond-the-viewport-on-mobile-s":
+          isBeyondOfTheViewPortOnMobileS,
       })}
       data-js-slider={JSON.stringify({
         sliderParams,
@@ -61,12 +67,16 @@ const Slider = (props) => {
       </div>
 
       {!navigationTargetElementId && (
-        <SliderNavigation className="slider__navigation" />
+        <SliderNavigation
+          className="slider__navigation"
+          position={navigationPosition}
+          isHiddenMobile={isNavigationHiddenMobile}
+        />
       )}
-      {hasScrollbar && (
-        <div 
-        className="slider__scrollbar visible-mobile"
-        data-js-slider-scrollbar=""
+      {hasScrollbarOnMobile && (
+        <div
+          className="slider__scrollbar visible-mobile"
+          data-js-slider-scrollbar=""
         ></div>
       )}
     </div>

@@ -61,7 +61,7 @@ const Footer = (props) => {
   return (
     <footer className={classNames(className, "footer")}>
       <div className="footer__inner container">
-        <nav className="footer__menu">{menuItems}</nav>
+        <div className="footer__menu">{menuItems}</div>
 
         <div className="footer__policy">
           <div className="footer__policy-copyright">

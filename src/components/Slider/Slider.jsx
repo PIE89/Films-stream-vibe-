@@ -4,9 +4,6 @@ import SliderNavigation from "./components/SliderNavigation"
 import classNames from "classnames"
 
 const defaultSliderParams = {
-  slidesPerView: 5,
-  slidesPerGroup: 5,
-  spaceBetween: 30,
   breakpoints: {
     0: {
       slidesPerView: 2,
@@ -28,6 +25,8 @@ const defaultSliderParams = {
       allowTouchMove: false,
     },
     1441: {
+      slidesPerView: 5,
+      slidesPerGroup: 5,
       spaceBetween: 30,
       allowTouchMove: false,
     },

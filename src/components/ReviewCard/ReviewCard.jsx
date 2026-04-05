@@ -1,3 +1,4 @@
+import Badge from "../Badge"
 import RatingView from "../RatingView"
 import "./ReviewCard.scss"
 

@@ -1,9 +1,12 @@
 import { Button } from "@/components/Button"
+import { Icon } from "@/components/Icon"
 import PersonCard from "@/components/PersonCard"
+import Ratings from "@/components/Ratings"
 import ReviewCard from "@/components/ReviewCard"
 import Slider from "@/components/Slider"
 import SliderNavigation from "@/components/Slider/components/SliderNavigation"
-import "MovieDetails.scss"
+import Tags from "@/components/Tags"
+import "./MovieDetails.scss"
 
 const MovieDetails = () => {
   const titleId = "movie-details"
@@ -200,7 +203,84 @@ const MovieDetails = () => {
       </div>
 
       <aside className="movie-details__info">
-        <div className="movie-details__panel"></div>
+        <div className="movie-details__panel">
+          <div className="movie-details__groups">
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">
+                <Icon name="calendar" />
+                <span>Released Year</span>
+              </h3>
+
+              <div className="movie-details__description">
+                <time datetime="2022" className="h6">
+                  2022
+                </time>
+              </div>
+            </div>
+
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">
+                <Icon name="languages" />
+                <span>Available Languages</span>
+              </h3>
+
+              <Tags
+                items={["English", "Hindi", "Tamil", "Telegu", "Kannada"]}
+              />
+            </div>
+
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">
+                <Icon name="star" />
+                <span>Ratings</span>
+              </h3>
+
+              <Ratings
+                items={[
+                  {
+                    title: "IMDb",
+                    ratingView: 4.5,
+                  },
+                  {
+                    title: "StreamVibe",
+                    ratingView: 4,
+                  },
+                ]}
+              />
+            </div>
+
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">
+                <Icon name="genres" />
+                <span>Genres</span>
+              </h3>
+
+              <Tags items={["Action", "Adventure"]} />
+            </div>
+
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">Director</h3>
+
+              <PersonCard
+                name="Rishab Shetty"
+                subtitle="from India"
+                imgSrc={"./src/assets/images/people/director.jpg"}
+                imgAlt="director"
+              />
+            </div>
+
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">Music</h3>
+
+              <PersonCard
+                name="B. Ajaneesh Loknath"
+                subtitle="from India"
+                imgSrc={"./src/assets/images/people/music.jpg"}
+                imgAlt="music"
+              />
+            </div>
+          </div>
+        </div>
       </aside>
     </section>
   )

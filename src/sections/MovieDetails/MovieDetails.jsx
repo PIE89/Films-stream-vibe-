@@ -120,7 +120,7 @@ const MovieDetails = () => {
       </h2>
 
       <div className="movie-details__main">
-        <div className="movie-details__panel">
+        <div className="movie-details__panel movie-details__panel--description">
           <h3 className="movie-details__title">Description</h3>
           <div className="movie-details__description">
             <p>
@@ -132,7 +132,7 @@ const MovieDetails = () => {
         </div>
 
         <div className="movie-details__panel">
-          <header className="movie-details__header">
+          <header className="movie-details__panel-header">
             <h3 className="movie-details__title">Cast</h3>
             <SliderNavigation
               id={castSliderNavigationId}
@@ -145,13 +145,13 @@ const MovieDetails = () => {
             navigationTargetElementId={castSliderNavigationId}
             hasScrollbarOnMobile={false}
             sliderParams={{
-              slidesPerViews: "auto",
+              slidesPerView: "auto",
               spaceBetween: 10,
-              breakPoints: {
+              breakpoints: {
                 1024: {
-                  slidesPerViews: "auto",
+                  slidesPerView: "auto",
                   spaceBetween: 20,
-                  allowTouchMoves: false,
+                  allowTouchMove: false,
                 },
               },
             }}
@@ -162,7 +162,7 @@ const MovieDetails = () => {
           </Slider>
         </div>
 
-        <div className="movie-details__panel">
+        <div className="movie-details__panel movie-details__panel--large-gap-y">
           <header className="movie-details__panel-header">
             <h3 className="movie-details__title">Reviews</h3>
             <Button
@@ -179,18 +179,18 @@ const MovieDetails = () => {
             hasScrollbarOnMobile={false}
             sliderParams={{
               slidesPerView: 2,
-              sliderPerGroup: 2,
-              breakPoints: {
+              slidesPerGroup: 2,
+              breakpoints: {
                 0: {
                   slidesPerView: 1,
-                  sliderPerGroup: 1,
+                  slidesPerGroup: 1,
                   spaceBetween: 16,
                 },
                 1024: {
                   slidesPerView: 2,
-                  sliderPerGroup: 2,
-                  allowTouchMoves: false,
+                  slidesPerGroup: 2,
                   spaceBetween: 20,
+                  allowTouchMove: false,
                 },
               },
             }}
@@ -212,7 +212,7 @@ const MovieDetails = () => {
               </h3>
 
               <div className="movie-details__description">
-                <time datetime="2022" className="h6">
+                <time dateTime="2022" className="h6">
                   2022
                 </time>
               </div>
@@ -220,7 +220,7 @@ const MovieDetails = () => {
 
             <div className="movie-details__group">
               <h3 className="movie-details__title">
-                <Icon name="languages" />
+                <Icon name="language" />
                 <span>Available Languages</span>
               </h3>
 
@@ -239,11 +239,11 @@ const MovieDetails = () => {
                 items={[
                   {
                     title: "IMDb",
-                    ratingView: 4.5,
+                    ratingValue: 4.5,
                   },
                   {
                     title: "StreamVibe",
-                    ratingView: 4,
+                    ratingValue: 4,
                   },
                 ]}
               />

@@ -20,4 +20,10 @@
       );
     }
   }
+
+  &__label {
+    color: var(--color-white);
+    font-weight: 500;
+    font-size: fluid-to-laptop(20, 14);
+  }
 }

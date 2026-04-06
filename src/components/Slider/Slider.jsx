@@ -4,6 +4,9 @@ import SliderNavigation from "./components/SliderNavigation"
 import classNames from "classnames"
 
 const defaultSliderParams = {
+  slidesPerView: 5,
+  slidesPerGroup: 5,
+  spaceBetween: 30,
   breakpoints: {
     0: {
       slidesPerView: 2,
@@ -25,8 +28,6 @@ const defaultSliderParams = {
       allowTouchMove: false,
     },
     1441: {
-      slidesPerView: 5,
-      slidesPerGroup: 5,
       spaceBetween: 30,
       allowTouchMove: false,
     },
@@ -38,18 +39,20 @@ const Slider = (props) => {
     children,
     navigationTargetElementId = null,
     sliderParams = defaultSliderParams,
-    isBeyondOfTheViewPortOnMobileS,
+    isBeyondTheViewportOnMobileS,
     hasScrollbarOnMobile = true,
-    navigationPosition = "", // '' default | 'abs-bottom'
-    isNavigationHiddenMobile = true,
+    /**
+     * '' (default) | 'abs-bottom'
+     */
+    navigationPosition = "",
     navigationMode,
+    isNavigationHiddenMobile = true,
   } = props
 
   return (
     <div
       className={classNames("slider", {
-        "slider--beyond-the-viewport-on-mobile-s":
-          isBeyondOfTheViewPortOnMobileS,
+        "slider--beyond-the-viewport-on-mobile-s": isBeyondTheViewportOnMobileS,
       })}
       data-js-slider={JSON.stringify({
         sliderParams,
@@ -69,16 +72,17 @@ const Slider = (props) => {
       {!navigationTargetElementId && (
         <SliderNavigation
           className="slider__navigation"
+          mode={navigationMode}
           position={navigationPosition}
           isHiddenMobile={isNavigationHiddenMobile}
-          mode={navigationMode}
         />
       )}
+
       {hasScrollbarOnMobile && (
         <div
           className="slider__scrollbar visible-mobile"
           data-js-slider-scrollbar=""
-        ></div>
+        />
       )}
     </div>
   )

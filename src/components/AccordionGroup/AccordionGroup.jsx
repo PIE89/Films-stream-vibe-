@@ -2,7 +2,13 @@ import classNames from "classnames"
 import "./AccordionGroup.scss"
 
 const AccordionGroup = (props) => {
-  const { columns = 1, children, isOrderedList = true } = props
+  const {
+    mode = "", // "" | 'dark
+
+    columns = 1,
+    children,
+    isOrderedList = true,
+  } = props
 
   const itemsPerColumn = Math.ceil(children.length / columns)
 
@@ -13,6 +19,7 @@ const AccordionGroup = (props) => {
       className={classNames("accordion-group", {
         [`accordion-group--${columns}-columns`]: columns > 1,
         "accordion-group--has-counter": isOrderedList,
+        [`accordion-group--${mode}`]: mode,
       })}
     >
       {children.map((child, index) => (

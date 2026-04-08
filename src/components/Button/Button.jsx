@@ -6,6 +6,7 @@ const Button = (props) => {
   const {
     className,
     type = "button",
+    socials = false,
     href,
     target,
     mode = "", // default | transparent | 'black-10' | 'black-08' | 'black-06'
@@ -31,6 +32,7 @@ const Button = (props) => {
     <Component
       className={classNames(className, "button", {
         [`button--${mode}`]: mode,
+        [`button--socials`]: socials,
       })}
       title={title}
       aria-label={title}

@@ -47,8 +47,10 @@ const Footer = (props) => {
             <li key={i} className="footer__menu-group-list-item">
               <Button
                 className="footer__menu-group-button"
+                socials
                 label={icon}
                 isLabelHidden
+                hasFillIcon
                 mode="transparent"
                 iconName={icon}
               />

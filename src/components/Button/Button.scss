@@ -40,7 +40,7 @@
   &--transparent {
     background-color: transparent;
 
-    &:has(.button__icon:only-child) {
+    &:has(.button__icon:only-child):not(.button--socials) {
       @include square(44px);
 
       .button__icon {
@@ -65,5 +65,13 @@
 
   &--black-10 {
     background-color: var(--color-black-10);
+  }
+
+  &--socials {
+    @include square(#{fluid(56, 44)});
+
+    .button__icon {
+      --iconSize: #{fluid-to-laptop(24, 20)};
+    }
   }
 }

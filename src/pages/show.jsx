@@ -10,7 +10,10 @@ export default function () {
   return (
     <>
       <ShowBanner />
-      <MovieDetails seasons={<Seasons />} />
+      <MovieDetails
+        seasons={<Seasons />}
+        seasonDescription="When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl."
+      />
     </>
   )
 }

@@ -9,7 +9,7 @@ import Tags from "@/components/Tags"
 import "./MovieDetails.scss"
 
 const MovieDetails = (props) => {
-  const { seasons } = props
+  const { seasons, seasonDescription = "" } = props
 
   const titleId = "movie-details"
   const castSliderNavigationId = "movie-card-slider-navigation"
@@ -134,11 +134,20 @@ const MovieDetails = (props) => {
         <div className="movie-details__panel movie-details__panel--description">
           <h3 className="movie-details__title">Description</h3>
           <div className="movie-details__description">
-            <p>
-              A fiery young man clashes with an unflinching forest officer in a
-              south Indian village where spirituality, fate and folklore rule
-              the lands.
-            </p>
+            {seasonDescription && (
+              <p>
+                When a young boy vanishes, a small town uncovers a mystery
+                involving secret experiments, terrifying supernatural forces and
+                one strange little girl.
+              </p>
+            )}
+            {!seasonDescription && (
+              <p>
+                A fiery young man clashes with an unflinching forest officer in
+                a south Indian village where spirituality, fate and folklore
+                rule the lands.
+              </p>
+            )}
           </div>
         </div>
 

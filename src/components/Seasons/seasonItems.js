@@ -1,8 +1,8 @@
 const seasonsItems = [
   {
     title: "Season 01",
-    subtitle: "9 Episodes",
-    episode: [
+    subtitle: "9 episodess",
+    episodes: [
       {
         number: "01",
         title: "Chapter One : The Vanishing of Will Byers",
@@ -163,8 +163,8 @@ const seasonsItems = [
 
   {
     title: "Season 02",
-    subtitle: "12 Episodes",
-    episode: [
+    subtitle: "12 episodess",
+    episodes: [
       {
         number: "01",
         title: "Chapter One : The Vanishing of Will Byers",
@@ -325,8 +325,8 @@ const seasonsItems = [
 
   {
     title: "Season 03",
-    subtitle: "6 Episodes",
-    episode: [
+    subtitle: "6 episodess",
+    episodes: [
       {
         number: "01",
         title: "Chapter One : The Vanishing of Will Byers",

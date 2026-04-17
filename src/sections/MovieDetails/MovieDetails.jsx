@@ -12,7 +12,7 @@ const MovieDetails = (props) => {
   const { seasons, seasonDescription = "" } = props
 
   const titleId = "movie-details"
-  const castSliderNavigationId = "movie-card-slider-navigation"
+  const castSliderNavigationId = "movie-cast-slider-navigation"
   const castItems = [
     {
       imgSrc: "./src/assets/images/people/cast.jpg",

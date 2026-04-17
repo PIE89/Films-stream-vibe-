@@ -45,6 +45,7 @@ const MovieBannerCard = (props) => {
               iconName="plus"
               label="Add to play list"
               isLabelHidden
+              hasFillIcon
             />
             <Button
               mode="black-06"

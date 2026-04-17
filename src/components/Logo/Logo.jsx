@@ -1,18 +1,19 @@
-import './Logo.scss'
-import classNames from 'classnames'
+import "./Logo.scss"
+import classNames from "classnames"
+import logoImgSrc from "@/assets/images/logo.svg"
 
-const Logo = ({loading = 'lazy', className}) => {
-  const title = 'Home';
+const Logo = ({ loading = "lazy", className }) => {
+  const title = "Home"
   return (
     <a
       className={classNames(className, "logo")}
-      href='/'
+      href="/"
       title={title}
       aria-label={title}
     >
       <img
         className="logo__image"
-        src="./logo.svg"
+        src={logoImgSrc}
         alt="logo"
         width={199}
         height={60}
@@ -22,4 +23,4 @@ const Logo = ({loading = 'lazy', className}) => {
   )
 }
 
-export {Logo}
+export { Logo }

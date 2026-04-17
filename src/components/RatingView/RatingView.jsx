@@ -1,4 +1,6 @@
 import "./RatingView.scss"
+import starsUnfilledImgSrc from "@/assets/images/rating/stars__unfilled.svg"
+import starsFilledImgSrc from "@/assets/images/rating/stars__filled.svg"
 
 const RatingView = (props) => {
   const { value = 5, label } = props
@@ -16,14 +18,14 @@ const RatingView = (props) => {
     >
       <div className="rating-view__stars">
         <img
-          src="/rating/stars__unfilled.svg"
+          src={starsUnfilledImgSrc}
           alt=""
           className="rating-view__stars-unfilled"
           width={98}
           height={18}
         />
         <img
-          src="/rating/stars__filled.svg"
+          src={starsFilledImgSrc}
           alt=""
           className="rating-view__stars-filled"
           width={98}

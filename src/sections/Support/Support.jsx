@@ -54,10 +54,10 @@ const Support = () => {
         />
 
         <Field
-          renderBefore={(buttonClassName) => (
+          renderBefore={(fieldControlClassName) => (
             <Select
               label="Phone number prefix"
-              buttonClassName={buttonClassName}
+              buttonClassName={fieldControlClassName}
               options={[
                 { value: "+7", isSelected: true },
                 { value: "+1" },
